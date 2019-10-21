@@ -1,12 +1,11 @@
 import React from "react";
-import { Card, Button, CardHeader, CardBody, CardTitle, Form, FormGroup, Input, Label, Container } from 'reactstrap';
+import { Card, Button, CardHeader, CardBody, CardTitle, Form, FormGroup, Input, Label } from 'reactstrap';
 
 const Login = () => {
 
     return (
 
         <>
-
             <Card>
                 <CardHeader>Login</CardHeader>
                 <CardBody>
@@ -23,10 +22,14 @@ const Login = () => {
                             <Input type="password" name="password" id="password" placeholder="Your password" />
                         </FormGroup>
                         <Button>Login</Button> <Button>Register</Button>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="checkbox" />{' '}Remember Me
+                            </Label>
+                        </FormGroup>
                     </Form>
                 </CardBody>
             </Card>
-
         </>
     )
 }
