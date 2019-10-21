@@ -10,7 +10,12 @@ import Register from './components/Register/Register';
 function App() {
   return (
     <Container>
-    <Login />
+    <Route path="/login/">
+        <Login />
+    </Route>
+    <Route path="/register/">
+        <Register />
+    </Route>
     </Container>
   );
 }
