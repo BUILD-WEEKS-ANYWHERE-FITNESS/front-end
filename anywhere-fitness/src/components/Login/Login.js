@@ -14,7 +14,6 @@ const Login = () => {
         <div className="card-container">
             <Card className="form-card">
                 <div className="half">
-                    <CardHeader>Login</CardHeader>
                     <CardBody className="form-card-body login">
                         <CardTitle>Login to your account</CardTitle>
                         <h1> Login Page! </h1>

@@ -30,7 +30,6 @@ const Register = () => {
     <div className="card-container">
       <Card className="form-card">
       <div className="half">
-            <CardHeader>Register</CardHeader>
             <CardBody className="form-card-body">
                 <CardTitle> Sign Up Now!</CardTitle>
 
@@ -40,21 +39,21 @@ const Register = () => {
                 }
                   <FormGroup>
                     <Label for="exampleEmail">Email</Label>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" onChange={changeHandler} />
+                    <Input type="email" name="email" id="exampleEmail" placeholder="Email" onChange={changeHandler} />
                   </FormGroup>
 
                   {//Password Input
                   }
                   <FormGroup>
                     <Label for="examplePassword">Password</Label>
-                    <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" onChange={changeHandler}/>
+                    <Input type="password" name="password" id="examplePassword" placeholder="Password" onChange={changeHandler}/>
                   </FormGroup>
 
                   {//Confirm Password Input
                   }
                   <FormGroup>
                     <Label for="examplePassword">Confirm Password</Label>
-                    <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="password placeholder" onChange={changeHandler}/>
+                    <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm" onChange={changeHandler}/>
                   </FormGroup>
 
                   {//Dropdown for instructor vs client;
