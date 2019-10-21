@@ -10,6 +10,15 @@ const Register = () => {
         setRole({value: event.target.value})
     }
 
+    let isInstructor = false;
+
+
+    if (role.value === "instructor") {
+        isInstructor = true;
+    } else {
+        isInstructor = false;
+    }
+
     return (
     <div>
         <h1>Registration Page!</h1>
@@ -44,7 +53,15 @@ const Register = () => {
               <option value="client">Client</option>
               <option value="instructor">Instructor</option>
             </Input>
-            {console.log(role)}
+            <div >
+            <br />
+            {isInstructor ? (
+                <Input type="authCode" name="authCode" id="authCode" placeholder="authCode" />
+            ) : (
+                    <h1 />
+                )}
+                <br />
+            </div>
           </FormGroup>
             <Button>Submit</Button>
           </Form>
