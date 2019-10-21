@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Button, CardHeader, CardBody, CardTitle, Form, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 
-const formValidation = () => {
-    console.log('error');
-}
+// const formValidation = (e) => {
+//     e.preventDefault();
+//     console.log('error');
+// }
+
 
 const Login = () => {
 
+    const [isValid, setIsValid] = useState(false);
+    const [valueState, setValueState] = useState({email: '', password: ''});
+    const [emailValue, setEmailValue] = useState('');
+    const [passwordValue, setPasswordValue] = useState('');
+
+    const handleChange = (value) => {
+        
+        console.log(value)
+
+    }
     return (
         <Card>
             <CardHeader>Login</CardHeader>
@@ -17,14 +29,15 @@ const Login = () => {
                 <Form>
                     <FormGroup>
                         <Label for="email">Email:</Label>
-                        <Input type="email" name="email" id="email" placeholder="Your email" />
-                        <FormFeedback>Oh noes! that name is already taken</FormFeedback>
+                        <Input invalid={isValid} onChange={handleChange(valueState.email)} type="email" name="email" id="email" placeholder="Your email" value={valueState.email} />
+                        <FormFeedback>Required! Please enter your email address.</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password:</Label>
-                        <Input type="password" name="password" id="password" placeholder="Your password" />
+                        <Input invalid={isValid} onChange={handleChange(valueState.password)} type="password" name="password" id="password" placeholder="Your password" value={valueState.password} />
+                        <FormFeedback>Required! Please enter your password.</FormFeedback>
                     </FormGroup>
-                    <Button onSubmit={formValidation}>Login</Button> <Button>Register</Button>
+                    <Button>Login</Button> <Button>Register</Button>
                     <FormGroup check>
                         <Label check>
                             <Input type="checkbox" />{' '}Remember Me
