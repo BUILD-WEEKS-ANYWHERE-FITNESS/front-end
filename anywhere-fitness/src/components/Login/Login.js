@@ -1,6 +1,10 @@
 import React from "react";
 import { Card, Button, CardHeader, CardBody, CardTitle, Form, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 
+const formValidation = () => {
+    console.log('error');
+}
+
 const Login = () => {
 
     return (
@@ -20,7 +24,7 @@ const Login = () => {
                         <Label for="password">Password:</Label>
                         <Input type="password" name="password" id="password" placeholder="Your password" />
                     </FormGroup>
-                    <Button onSubmit={formVlidation}>Login</Button> <Button>Register</Button>
+                    <Button onSubmit={formValidation}>Login</Button> <Button>Register</Button>
                     <FormGroup check>
                         <Label check>
                             <Input type="checkbox" />{' '}Remember Me
