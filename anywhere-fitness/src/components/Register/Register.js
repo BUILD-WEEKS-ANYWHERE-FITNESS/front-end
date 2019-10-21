@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
 const Register = () => {
+    const [role, setRole] = useState({value: ""});
 
+    //Sets role to either instructor or client based on drop down selection value.
+    const handleChange = event => {
+        setRole({value: event.target.value})
+    }
 
     return (
     <div>
@@ -33,14 +38,13 @@ const Register = () => {
           {//Dropdown for instructor vs client;
           }
           <FormGroup>
-            <Label for="exampleSelect">Select</Label>
-            <Input type="select" name="select" id="exampleSelect">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <Label for="exampleSelect">Client or Instructor?</Label>
+            <Input type="select" name="select" id="exampleSelect" onChange={handleChange} >
+              <option value=""> Select a Role </option>
+              <option value="client">Client</option>
+              <option value="instructor">Instructor</option>
             </Input>
+            {console.log(role)}
           </FormGroup>
             <Button>Submit</Button>
           </Form>
