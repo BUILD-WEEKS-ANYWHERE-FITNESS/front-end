@@ -18,7 +18,7 @@
 .form-card img {
   width: 50%;
 }
-@media (max-width: 700px) {
+@media (max-width: 500px) {
   .form-card img {
     display: none;
     width: 0%;
@@ -27,6 +27,11 @@
 .half {
   width: 50%;
 }
+@media (max-width: 500px) {
+  .half {
+    width: 100%;
+  }
+}
 .form-card-body {
   width: 100%;
   padding-top: 15%;
@@ -34,4 +39,11 @@
 }
 .form-card-body Input {
   width: 75%;
+}
+@media (max-width: 500px) {
+  .form-card-body {
+    width: 100%;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
 }

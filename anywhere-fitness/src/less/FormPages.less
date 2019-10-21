@@ -18,11 +18,18 @@
     justify-content: space-between;
     img {
         width: 50%;
+        @media @mobile {
+            display: none;
+            width: 0%;
+        }
     }
 }
 
 .half {
     width: 50%;
+    @media @mobile {
+        width: 100%;
+    }
 }
 
 .form-card-body {
@@ -30,7 +37,12 @@
     padding-top: 15%;
     padding-bottom: 5%;
     Input {
-        width:75%;
+        width: 75%;
+    }
+    @media @mobile {
+        width: 100%;
+        padding-right: 5%;
+        padding-left: 5%;
     }
 }
 

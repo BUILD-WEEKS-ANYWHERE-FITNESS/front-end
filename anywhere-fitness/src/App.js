@@ -4,8 +4,7 @@ import { Container } from 'reactstrap';
 import Login from './components/Login/Login';
 import logo from './logo.svg';
 import './App.css';
-import './css/Register.css';
-import './css/FormPages.css';
+import './css/index.css';
 import Register from './components/Register/Register';
 
 function App() {
