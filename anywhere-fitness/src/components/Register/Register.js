@@ -26,8 +26,8 @@ const Register = () => {
           {//Confirm Password Input
           }
           <FormGroup>
-            <Label for="examplePassword">Password</Label>
-            <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+            <Label for="examplePassword">Confirm Password</Label>
+            <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="password placeholder" />
           </FormGroup>
 
           {//Dropdown for instructor vs client;

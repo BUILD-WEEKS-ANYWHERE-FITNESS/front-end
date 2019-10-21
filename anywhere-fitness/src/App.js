@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import './css/Register.css';
 import Register from './components/Register/Register';
 
 function App() {
