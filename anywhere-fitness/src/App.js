@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import Register from './components/Register/Register';
@@ -6,7 +7,10 @@ import Register from './components/Register/Register';
 function App() {
   return (
     <div className="App">
-    <Register />
+    <Route path="/register/">
+        <Register />
+    </Route>
+    <Route exact path="/">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,6 +25,7 @@ function App() {
           Learn React
         </a>
       </header>
+      </Route>
     </div>
   );
 }
