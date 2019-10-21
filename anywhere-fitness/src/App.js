@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import './App.css';
+import { Container } from 'reactstrap';
 import Login from './components/Login/Login';
 
 function App() {
   return (
-    <div className="App">
+    <Container>
     <Login />
-    </div>
+    </Container>
   );
 }
 
