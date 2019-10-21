@@ -4,41 +4,11 @@ import { Card, Button, CardHeader, CardBody, CardTitle, Form, FormGroup, Input, 
 
 const Login = () => {
 
-    const [isPasswordValid, setIsPasswordValid] = useState(false);
-    const [isEmailValid, setIsEmailValid] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     });
 
-    const formValidation = (e) => {
-        e.preventDefault();
-        if(formData.email === '') {
-            setIsEmailValid(true)
-        }
-        if(formData.password === '') {
-            setIsPasswordValid(true)
-        }
-    }
-
-    // const handleChange = (event) => {
-
-    //     setFormData({
-    //         ...formData, [event.target.name]: event.target.value
-    //     })
-
-    //     if(formData.password === '') {
-    //         setisPasswordValid(true)
-    //     } else {
-    //         setisPasswordValid(false)
-    //     }
-    //     if (formData.email === '') {
-    //         setIsEmailValid(true)
-    //     } else {
-    //         setIsEmailValid(false)
-    //     }
-
-    // }
 
     return (
         <div className="card-container">
@@ -53,15 +23,13 @@ const Login = () => {
                         <Form>
                             <FormGroup>
                                 <Label for="email">Email:</Label>
-                                <Input invalid type="email" name="email" id="email" placeholder="Your email" />
-                                <FormFeedback>Required!</FormFeedback>
+                                <Input type="email" name="email" id="email" placeholder="Your email"/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="password">Password:</Label>
-                                <Input invalid type="password" name="password" id="password" placeholder="Your password" />
-                                <FormFeedback>Required!</FormFeedback>
+                                <Input  type="password" name="password" id="password" placeholder="Your password" />
                             </FormGroup>
-                            <Button onSubmit={formValidation}>Login</Button> <Button>Register</Button>
+                            <Button >Login</Button> <Button>Register</Button>
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox" />{' '}Remember Me
