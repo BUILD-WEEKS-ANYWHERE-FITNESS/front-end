@@ -11,10 +11,22 @@ header {
         align-items: flex-end;
     }
 
+    .my-link {
+        text-decoration: none !important;
+        
+    }
+
     .nav-links {
         padding: 10px;
         margin: 0 10px;
         color: #053f5e;
+
+        .nav-item-style {
+
+            &:hover {
+                color: @darkBlue !important;
+            }
+        }
     }
 
     .active {
