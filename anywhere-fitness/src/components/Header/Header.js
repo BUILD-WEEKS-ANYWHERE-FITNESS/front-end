@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <header>
              <Navbar color="light" light expand="lg">
-                    <NavbarBrand href="/">Anywhere Fitness</NavbarBrand>
+                    <NavbarBrand><h1>Anywhere Fitness</h1></NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                       <Nav className="ml-auto" navbar>
