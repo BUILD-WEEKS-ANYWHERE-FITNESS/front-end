@@ -24,8 +24,18 @@
         top: 50%;
         transform: translateY(-60%);
 
+        @media @tablet {
+            width: 50%;
+            height: 60%;
+            padding: 2rem;
+            margin-top: 5%;
+            margin-left: -2%;
+        }
+
         @media @mobile {
-            width: 80%;
+            margin-top: 2%;
+            margin-left: -1%;
+
         }
 
         h2 {
@@ -33,7 +43,10 @@
             font-size: 5rem;
 
             @media @tablet {
-                font-size: 3.6rem;
+                font-size: 2.0rem;
+            }
+            @media @mobile {
+                font-size: 1.5rem;
             }
         }
 
@@ -41,7 +54,10 @@
             font-size: 2.5rem;
 
             @media @tablet {
-                font-size: 2rem;
+                font-size: 1rem;
+            }
+            @media @mobile {
+                font-size: 0.8rem;
             }
         }
     }
