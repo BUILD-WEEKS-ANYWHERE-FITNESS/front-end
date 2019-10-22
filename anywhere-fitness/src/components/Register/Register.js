@@ -74,7 +74,7 @@ const Register = () => {
                         <br />
                     </div>
                   </FormGroup>
-                    <Button className="login-button">Submit</Button>
+                <Button className="btn btn-secondary">Submit</Button>
                   </Form>
                   {console.log(user)}
                 </CardBody>
