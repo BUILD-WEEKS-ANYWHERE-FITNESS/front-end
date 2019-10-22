@@ -18,7 +18,7 @@ const Home = () => {
                 <Container>
                     <div className="section-content">
                         <div className="img-container">
-                            <img src="./images/workout-woods.jpg" alt="Man working out in wooded area" />
+                            <img src={require('../../images/workout-woods.jpg')} alt="Man working out in wooded area" className="img-fluid" />
                         </div>
                         <div className="content-card primary-card">
                             <div className="card-text">
@@ -39,7 +39,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="img-container">
-                            <img src="./images/workout-beach.jpg" alt="Woman doing yoga by the beach." />
+                            <img src={require('../../images/workout-beach.jpg')} alt="Woman doing yoga by the beach." className="img-fluid" />
                         </div>
                     </div>
                 </Container>

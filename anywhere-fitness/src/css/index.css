@@ -139,7 +139,7 @@ header button {
   }
 }
 .section-content .img-container {
-  height: 300px;
+  height: auto;
 }
 .section-content .img-container,
 .section-content .content-card {
