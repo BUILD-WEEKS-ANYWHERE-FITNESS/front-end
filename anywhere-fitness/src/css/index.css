@@ -138,6 +138,9 @@ header button {
     align-items: center;
   }
 }
+.section-content .img-container {
+  height: 300px;
+}
 .section-content .img-container,
 .section-content .content-card {
   width: 45%;

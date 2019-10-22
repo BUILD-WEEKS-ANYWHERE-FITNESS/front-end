@@ -18,7 +18,7 @@ const Home = () => {
                 <Container>
                     <div className="section-content">
                         <div className="img-container">
-                            <img src="images/DesertVan.jpg" alt="Van driving through the desert" />
+                            <img src="./images/workout-woods.jpg" alt="Man working out in wooded area" />
                         </div>
                         <div className="content-card primary-card">
                             <div className="card-text">
@@ -39,7 +39,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="img-container">
-                            <img src="images/getaway.jpg" alt="Friends and family gathering by the pool" />
+                            <img src="./images/workout-beach.jpg" alt="Woman doing yoga by the beach." />
                         </div>
                     </div>
                 </Container>
