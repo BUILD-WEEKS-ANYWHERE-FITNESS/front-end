@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Container, Card, CardBody, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const AddClass = () => {
-    
+
     // Date used to pre-fill date/time picker with current day. Not sure if needed or not.
     const today = new Date();
     const month = ("0" + (today.getMonth() + 1)).slice(-2);
@@ -25,7 +25,7 @@ const AddClass = () => {
                                     <Input type="name" name="name" id="name" placeholder="Enter name of class" />
                                 </Col>
                             </FormGroup>
-                            
+
                             {/* Type */}
                             <FormGroup row>
                                 <Label for="type" sm={2}>Type</Label>
@@ -46,9 +46,13 @@ const AddClass = () => {
                             {/* Duration */}
                             <FormGroup row>
                                 <Label for="duration" sm={2}>Duration</Label>
-                                <Col sm={10}>
-                                    <Input type="duration" name="duration" id="duration" placeholder="Enter duration in minutes Ex: 30mins" />
-                                </Col>
+                                <Input style={{width:"80.75%", marginLeft:"18%"}} sm={10}  type="select" name="duration" id="duration" label="duration" >
+                                  <option value=""> Select duration </option>
+                                  <option value="30-mins">30 mins</option>
+                                  <option value="45-mins">45 mins</option>
+                                  <option value="60-mins">60 mins</option>
+                                </Input>
+
                             </FormGroup>
 
                             {/* Intensity Level */}
