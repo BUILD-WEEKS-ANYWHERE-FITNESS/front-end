@@ -1,3 +1,7 @@
+.home-display-flex {
+  display: flex;
+  justify-content: space-between;
+}
 .card-container {
   display: flex;
   align-items: center;
@@ -75,4 +79,153 @@ header button {
   padding: 5px 10px;
   color: #4f5a5f;
   font-weight: bold;
+}
+.main-hero {
+  background: #115173;
+}
+.main-hero .hero-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../images/workout-hero.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.main-hero .container {
+  position: relative;
+  height: inherit;
+}
+.main-hero .main-heading-block {
+  width: 50%;
+  color: #fff;
+  border: 2px solid #e7eef1;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+}
+@media (max-width: 500px) {
+  .main-hero .main-heading-block {
+    width: 80%;
+  }
+}
+.main-hero .main-heading-block h2 {
+  padding-bottom: 2rem;
+  font-size: 5rem;
+}
+@media (max-width: 700px) {
+  .main-hero .main-heading-block h2 {
+    font-size: 3.6rem;
+  }
+}
+.main-hero .main-heading-block h3 {
+  font-size: 2.5rem;
+}
+@media (max-width: 700px) {
+  .main-hero .main-heading-block h3 {
+    font-size: 2rem;
+  }
+}
+.front-page-sections {
+  padding: 8rem 0;
+}
+.section-content {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 700px) {
+  .section-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.section-content .img-container {
+  height: 300px;
+}
+.section-content .img-container,
+.section-content .content-card {
+  width: 45%;
+}
+@media (max-width: 700px) {
+  .section-content .img-container,
+  .section-content .content-card {
+    margin-bottom: 2rem;
+    width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .section-content .img-container,
+  .section-content .content-card {
+    width: 100%;
+  }
+}
+.section-content .content-card {
+  position: relative;
+}
+.section-content .content-card .card-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+@media (max-width: 700px) {
+  .section-content .content-card .card-text {
+    position: static;
+    transform: translate(0, 0);
+    width: 100%;
+    padding: 2rem;
+  }
+}
+.section-content .content-card p {
+  font-size: 1.75rem;
+}
+.section-content .primary-card {
+  background-color: #115173;
+  color: #fff;
+}
+.section-content .secondary-card {
+  background-color: #fff;
+  color: #115173;
+}
+.secondary-section {
+  background-color: #115173;
+}
+@media (max-width: 700px) {
+  .secondary-section .section-content {
+    flex-direction: column-reverse;
+  }
+}
+.features .features-parent {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .features .features-parent {
+    flex-direction: column;
+  }
+}
+.features .feature-block {
+  width: 30%;
+  border: 3px solid #ffd700;
+  padding: 2rem;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .features .feature-block {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+.features .feature-block i {
+  font-size: 3rem;
+}
+.features .feature-block h3 {
+  margin: 1.5rem 0;
+  font-size: 2rem;
+}
+footer {
+  text-align: center;
+  background: #115173;
+  padding: 20px 0;
+  color: #fff;
 }

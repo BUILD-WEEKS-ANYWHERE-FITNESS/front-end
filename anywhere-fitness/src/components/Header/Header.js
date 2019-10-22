@@ -9,8 +9,8 @@ const Header = () => {
                 <nav>
                     <h1>Anywhere Fitness</h1>
                     <div className="links-container">
-                        <NavLink className="nav-links" to="/Landing/">Home</NavLink>
-                        <NavLink className="nav-links" to="/About/">About</NavLink>
+                        <NavLink className="nav-links" exact to="/">Home</NavLink>
+                        <NavLink className="nav-links" to="/about/">About</NavLink>
                         <button>Login/Sign Up</button>
                     </div>
                 </nav>
