@@ -31,9 +31,8 @@ const Register = () => {
       <Card className="form-card">
       <div className="half">
             <CardBody className="form-card-body">
-                <CardTitle> Sign Up Now!</CardTitle>
+                <CardTitle> <h1>Sign Up Now!</h1></CardTitle>
 
-                <h1>Registration Page!</h1>
                 <Form >
                 {//Email Input
                 }
@@ -75,7 +74,7 @@ const Register = () => {
                         <br />
                     </div>
                   </FormGroup>
-                    <Button>Submit</Button>
+                    <Button className="login-button">Submit</Button>
                   </Form>
                   {console.log(user)}
                 </CardBody>

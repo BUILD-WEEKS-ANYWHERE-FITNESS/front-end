@@ -17,6 +17,29 @@
   padding-top: 10%;
   padding-bottom: 10%;
 }
+.card-container Button {
+  border-radius: 8px;
+}
+.card-container .login-button {
+  margin-right: 5%;
+  background-color: #ffd700;
+  border: 1px solid #ffd700;
+  color: #115173;
+  font-weight: bold;
+}
+.card-container .login-button:hover {
+  background-color: #115173;
+  color: #ffd700;
+}
+.card-container .register-button {
+  background-color: #115173;
+  color: white;
+}
+.card-container .register-button:hover {
+  color: #ffd700;
+  background-color: #022c43;
+  border: 1px solid #ffd700;
+}
 .form-card {
   width: 75%;
   height: 100%;

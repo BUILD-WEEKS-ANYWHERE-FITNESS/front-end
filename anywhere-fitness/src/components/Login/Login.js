@@ -16,8 +16,7 @@ const Login = () => {
             <Card className="form-card">
                 <div className="half">
                     <CardBody className="form-card-body login">
-                        <CardTitle>Login to your account</CardTitle>
-                        <h1> Login Page! </h1>
+                        <CardTitle><h1>Login to your account</h1></CardTitle>
 
                         {/* Form here */}
                         <Form>
@@ -29,7 +28,8 @@ const Login = () => {
                                 <Label for="password">Password:</Label>
                                 <Input  type="password" name="password" id="password" placeholder="Your password" />
                             </FormGroup>
-                            <Button >Login</Button> <Link to="/register"><Button>Register</Button></Link>
+                            <Button className="login-button">Login</Button>
+                            <Link to="/register"><Button className="register-button">Register</Button></Link>
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox" />{' '}Remember Me
