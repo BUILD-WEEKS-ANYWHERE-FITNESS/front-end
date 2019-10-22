@@ -7,7 +7,36 @@
     height: 100%;
     padding-top: 10%;
     padding-bottom: 10%;
+
+    Button {
+        border-radius: 8px;
+        
+    }
+    .login-button {
+        margin-right: 5%;
+        background-color: @mainYellow;
+        border: 1px solid @mainYellow;
+
+        color: @mainBlue;
+        font-weight: bold;
+        &:hover {
+            background-color:@mainBlue;
+            color: @mainYellow;
+        }
+
+    }
+
     
+    .register-button {
+        background-color: @mainBlue;
+        color: white;
+
+        &:hover {
+            color: @mainYellow;
+            background-color:@darkBlue;
+            border: 1px solid @mainYellow;
+        }
+    }
 }
 
 .form-card {
