@@ -1,21 +1,42 @@
-import React from 'react';
-import { Container } from 'reactstrap';
-import { NavLink, Link } from 'react-router-dom';
-
+import React, { useState } from 'react';
+import {  Link } from 'react-router-dom';
+import {
+  Collapse,
+  Container,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
     return (
         <header>
-            <Container>
-                <nav>
-                    <h1>Anywhere Fitness</h1>
-                    <div className="links-container">
-                        <NavLink className="nav-links" exact to="/">Home</NavLink>
-                        <NavLink className="nav-links" to="/about/">About</NavLink>
-                        <button><Link className="nav-links" to="/login">Login/Sign Up</Link></button>
-                    </div>
-                </nav>
-            </Container>
-        </header>
+             <Navbar color="light" light expand="lg">
+                    <NavbarBrand href="/">Anywhere Fitness</NavbarBrand>
+                    <NavbarToggler onClick={toggle} />
+                    <Collapse isOpen={isOpen} navbar>
+                      <Nav className="ml-auto" navbar>
+                        <NavItem className="nav-links">
+                         <Link to="/"> <NavLink>Home</NavLink></Link>
+                        </NavItem>
+                        <NavItem className="nav-links">
+                          <NavLink>About</NavLink>
+                        </NavItem>
+                        <NavItem className="nav-links">
+                            <button><Link className="nav-links" to="/login">Login/Sign Up</Link></button>
+                        </NavItem>
+                    </Nav>
+                    </Collapse>
+                  </Navbar>
+              </header>
     )
 }
 
