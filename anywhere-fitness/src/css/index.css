@@ -89,10 +89,16 @@ header nav {
   justify-content: space-between;
   align-items: flex-end;
 }
+header .my-link {
+  text-decoration: none !important;
+}
 header .nav-links {
   padding: 10px;
   margin: 0 10px;
   color: #053f5e;
+}
+header .nav-links .nav-item-style:hover {
+  color: #022c43 !important;
 }
 header .active {
   color: #115173;
