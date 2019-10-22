@@ -56,9 +56,6 @@
     padding-left: 5%;
   }
 }
-header {
-  padding: 10px 0;
-}
 header h1 {
   margin: 0;
   color: #053f5e;
@@ -249,6 +246,33 @@ header button {
 .features .feature-block h3 {
   margin: 1.5rem 0;
   font-size: 2rem;
+}
+.classes {
+  padding-top: 5%;
+  background-color: white;
+  width: 75%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.classes .class-search-bar {
+  width: 30%;
+  background-color: white;
+  color: black;
+}
+.classes .class-search-card {
+  margin-top: 5%;
+  background-color: white;
+  width: 50%;
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-around;
+}
+.classes .class-search-card .class-search-drops {
+  background-color: white;
+  color: black;
+  width: 30%;
 }
 footer {
   text-align: center;

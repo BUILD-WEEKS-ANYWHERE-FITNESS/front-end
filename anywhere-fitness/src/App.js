@@ -9,6 +9,7 @@ import Register from './components/Register/Register';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/Landing/Home';
+import Classes from './components/Classes/Classes';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
+      <Route path="/classes" component={Classes} />
       <Footer />
     </div>
   );
