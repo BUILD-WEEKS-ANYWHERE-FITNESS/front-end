@@ -47,3 +47,32 @@
     padding-left: 5%;
   }
 }
+header {
+  padding: 10px 0;
+}
+header h1 {
+  margin: 0;
+  color: #053f5e;
+  font-size: 30px;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+header .nav-links {
+  padding: 10px;
+  margin: 0 10px;
+  color: #053f5e;
+}
+header .active {
+  color: #115173;
+}
+header button {
+  background: #ffd700;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: #4f5a5f;
+  font-weight: bold;
+}
