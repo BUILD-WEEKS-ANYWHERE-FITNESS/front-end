@@ -1,9 +1,5 @@
 import React from 'react';
 import { Container } from 'reactstrap';
-import styled, { keyframes } from "styled-components";
-import { fadeIn, zoomIn, zoomOut } from "react-animations";
-const FadeInAnimation = keyframes`${fadeIn}`;
-const FadeInDiv = styled.div`animation: 2s ${FadeInAnimation};`;
 
 
 
@@ -11,7 +7,6 @@ const FadeInDiv = styled.div`animation: 2s ${FadeInAnimation};`;
 const Home = () => {
     return (
         <>
-        <FadeInDiv>
             <section className="main-hero">
                 <div className="hero-image">
                     <Container>
