@@ -1,12 +1,19 @@
 import React from 'react';
 import { Container } from 'reactstrap';
-
+//ANIMATION CODE
+import { bounceInLeft } from 'react-animations'
+import styled, { keyframes } from "styled-components";
+const FadeInAnimation = keyframes`${bounceInLeft}`;
+const FadeInDiv = styled.div`
+  animation: 2s ${FadeInAnimation};
+`;
 
 
 
 const Home = () => {
     return (
         <>
+        <FadeInDiv>
             <section className="main-hero">
                 <div className="hero-image">
                     <Container>
@@ -17,6 +24,7 @@ const Home = () => {
                     </Container>
                 </div>
             </section>
+            </FadeInDiv>
             <main className="front-page-sections">
                 <Container>
                     <div className="section-content">

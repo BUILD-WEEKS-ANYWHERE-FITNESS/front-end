@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import { Card, CardHeader, CardBody, CardTitle,Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+//ANIMATION CODE
+import { fadeInDown } from 'react-animations'
+import styled, { keyframes } from "styled-components";
+const SlideInDownAnimation = keyframes`${fadeInDown}`;
+const SlideInDownDiv = styled.div`
+  animation: 2s ${SlideInDownAnimation}; margin-left:20%;
+`;
+
+
 
 
 const Register = () => {
@@ -19,6 +28,7 @@ const Register = () => {
 
     return (
     <div className="card-container">
+    <SlideInDownDiv>
       <Card className="form-card">
       <div className="half">
             <CardBody className="form-card-body">
@@ -64,6 +74,7 @@ const Register = () => {
                 </div>
             <img src={require('../../images/img1.jpg')} />
             </Card>
+            </SlideInDownDiv>
         </div>
 
     )
