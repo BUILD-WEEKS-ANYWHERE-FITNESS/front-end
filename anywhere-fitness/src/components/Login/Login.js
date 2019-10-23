@@ -16,6 +16,7 @@ const Login = () => {
         e.preventDefault();
         if (formData.username === '' || formData.password === '') {
             console.log('Error: fill out empty fields');
+            alert('Please fill out empty fields');
         }
     }
 
