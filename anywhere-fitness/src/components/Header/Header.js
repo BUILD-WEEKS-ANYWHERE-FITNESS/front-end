@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
-  Container,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  NavItem } from 'reactstrap';
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,13 +19,13 @@ const Header = () => {
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                       <Nav className="ml-auto" navbar>
-                        <NavItem className="nav-links">
-                         <Link className="my-link" to="/"> <NavLink className="nav-item-style">Home</NavLink></Link>
+                        <NavItem>
+                         <Link className="nav-links" to="/">Home</Link>
                         </NavItem>
-                        <NavItem className="nav-links">
-                          <NavLink className="nav-item-style">About</NavLink>
+                        <NavItem>
+                          <Link className="nav-item-style nav-links" to="/about">About</Link>
                         </NavItem>
-                        <NavItem className="nav-links">
+                        <NavItem>
                             <button><Link className="nav-links" to="/login/">Login/Sign Up</Link></button>
                         </NavItem>
                     </Nav>
