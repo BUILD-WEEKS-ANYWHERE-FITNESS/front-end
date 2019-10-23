@@ -1,17 +1,13 @@
-import React, { useState } from "react";
-import { Card, Button, CardBody, CardTitle, Form, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
-
+import React, { useState, useRef, useEffect } from "react";
+import { Card, Button, CardHeader, CardBody, CardTitle, Form, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 import { Link } from "react-router-dom";
-import posed, { PoseGroup } from 'react-pose';
 
 const Login = () => {
-
     const [formData, setFormData] = useState({
         username: '',
         password: '',
         usernameTouched: false,
         passwordTouched: false
-
     });
 
     const formValidation = (e) => {
@@ -40,11 +36,11 @@ const Login = () => {
                             {/* Username */}
                             <FormGroup>
                                 <Label htmlFor="username">Username:</Label>
-                                <Input 
-                                    type="username" 
-                                    name="username" 
-                                    id="username" 
-                                    placeholder="Your username" 
+                                <Input
+                                    type="username"
+                                    name="username"
+                                    id="username"
+                                    placeholder="Your username"
                                     value={formData.username}
                                     onChange={changeHandler}
                                     invalid={formData.usernameTouched && formData.username === ''}
@@ -55,13 +51,13 @@ const Login = () => {
                             {/* Password */}
                             <FormGroup>
                                 <Label htmlFor="password">Password:</Label>
-                                <Input 
-                                    type="password" 
-                                    name="password" 
-                                    id="password" 
-                                    placeholder="Your password" 
+                                <Input
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Your password"
                                     value={formData.password}
-                                    onChange={changeHandler}      
+                                    onChange={changeHandler}
                                     invalid={formData.passwordTouched && formData.password === ''}
                                 />
                                 <FormFeedback>Please enter password.</FormFeedback>
@@ -80,7 +76,6 @@ const Login = () => {
                 <img src={require("../../images/img2.jpg")} />
             </Card>
         </div>
-
     )
 }
 
