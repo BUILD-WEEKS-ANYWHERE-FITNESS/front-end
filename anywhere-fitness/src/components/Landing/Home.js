@@ -1,9 +1,15 @@
 import React from 'react';
 import { Container } from 'reactstrap';
+import styled, { keyframes } from "styled-components";
+import { fadeInDown } from "react-animations";
+const FadeInDownAnimation = keyframes`${fadeInDown}`;
+const FadeInDownDiv = styled.div`animation: 2s ${FadeInDownAnimation};`;
+
 
 const Home = () => {
     return (
         <>
+        <FadeInDownDiv>
             <section className="main-hero">
                 <div className="hero-image">
                     <Container>
@@ -14,6 +20,7 @@ const Home = () => {
                     </Container>
                 </div>
             </section>
+            </FadeInDownDiv>
             <main className="front-page-sections">
                 <Container>
                     <div className="section-content">
@@ -65,7 +72,7 @@ const Home = () => {
                     </div>
                 </Container>
             </section>
-        </>
+            </>
     )
 }
 
