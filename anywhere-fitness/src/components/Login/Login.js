@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Card, Button, CardBody, CardTitle, Form, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
-import { Link } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+import posed, { PoseGroup } from 'react-pose';
 
 const Login = () => {
 
@@ -10,6 +11,7 @@ const Login = () => {
         password: '',
         usernameTouched: false,
         passwordTouched: false
+
     });
 
     const formValidation = (e) => {
@@ -26,6 +28,7 @@ const Login = () => {
     }
 
     return (
+
         <div className="card-container">
             <Card className="form-card">
                 <div className="half">
@@ -77,6 +80,7 @@ const Login = () => {
                 <img src={require("../../images/img2.jpg")} />
             </Card>
         </div>
+
     )
 }
 
