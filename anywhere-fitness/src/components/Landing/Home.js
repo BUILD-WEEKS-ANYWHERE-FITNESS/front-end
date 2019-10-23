@@ -17,7 +17,6 @@ const Home = () => {
                     </Container>
                 </div>
             </section>
-            </FadeInDiv>
             <main className="front-page-sections">
                 <Container>
                     <div className="section-content">
