@@ -17,15 +17,6 @@ const Register = () => {
         setUser({...user, [event.target.name]: event.target.value});
     }
 
-    let isInstructor = false;
-
-
-    if (user.role === "instructor") {
-        isInstructor = true;
-    } else {
-        isInstructor = false;
-    }
-
     return (
     <div className="card-container">
       <Card className="form-card">
@@ -59,22 +50,14 @@ const Register = () => {
                   }
                   <FormGroup>
                     <Label for="exampleSelect">Client or Instructor?</Label>
-                    <Input type="select" name="role" id="role" onChange={changeHandler} >
+                    <Input style={{width:"75%"}} type="select" name="role" id="role" onChange={changeHandler} >
                       <option value=""> Select a Role </option>
                       <option value="client">Client</option>
                       <option value="instructor">Instructor</option>
                     </Input>
-                    <div >
                     <br />
-                    {isInstructor ? (
-                        <Input type="authCode" name="authCode" id="authCode" placeholder="authCode" onChange={changeHandler}/>
-                    ) : (
-                            <h1 />
-                        )}
-                        <br />
-                    </div>
                   </FormGroup>
-                <Button className="btn btn-secondary">Submit</Button>
+                <Button className="btn btn-secondary register-button">Submit</Button>
                   </Form>
                   {console.log(user)}
                 </CardBody>
