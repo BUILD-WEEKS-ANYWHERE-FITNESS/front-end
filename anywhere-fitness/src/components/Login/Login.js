@@ -93,7 +93,7 @@ const Login = (props) => {
                             <CardTitle><h1>Login to your account</h1></CardTitle>
 
                             {/* Form here */}
-                            <Form>
+                            <Form >
                                 {/* Username */}
                                 <FormGroup>
                                     <Label htmlFor="username">Username:</Label>
@@ -104,7 +104,15 @@ const Login = (props) => {
                                         placeholder="Your username"
                                         value={formData.username}
                                         onChange={changeHandler}
-                                        invalid={formData.usernameTouched && formData.username === ''}
+                                        onKeyPress={(event)=>{
+                                            if (event.which === 13) {
+                                                event.preventDefault();
+                                                if (formData.username === "") {
+                                                    alert('Either username or password is invalid!');
+                                                }
+                                            }
+                                        }}
+                                                                                invalid={formData.usernameTouched && formData.username === ''}
                                     />
                                     <FormFeedback>Please enter username.</FormFeedback>
                                 </FormGroup>
@@ -119,13 +127,23 @@ const Login = (props) => {
                                         placeholder="Your password"
                                         value={formData.password}
                                         onChange={changeHandler}
+                                        onKeyPress={(event)=>{
+                                            if (event.which === 13) {
+                                                event.preventDefault();
+                                                if (formData.password === "") {
+                                                                   alert('Either username or password is invalid!');
+                                                               }
+
+                                            }
+                                        }}
+
                                         invalid={formData.passwordTouched && formData.password === ''}
                                     />
                                     <FormFeedback>Please enter password.</FormFeedback>
                                 </FormGroup>
                                 <Button className="login-button" onClick={login}>Instructor Login</Button>
                                 <Button className="login-button" onClick={login1}>Client Login</Button>
-                                <Link to="/register"><Button className="register-button">Register</Button></Link>
+                                <Link to="/register"><Button className="register-button" onKeyPress={(e)=>{e.key === "enter" && e.preventDefault();}}>Register</Button></Link>
                                 <FormGroup check>
                                     <Label check>
                                         <Input type="checkbox" />{' '}Remember Me
