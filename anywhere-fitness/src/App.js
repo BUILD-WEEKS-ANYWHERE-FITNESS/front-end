@@ -11,6 +11,8 @@ import Header from './components/Header/Header';
 import Home from './components/Landing/Home';
 import Classes from './components/Classes/Classes';
 import AddClass from './components/Classes/AddClass';
+import  PrivateRoute from './components/PrivateRoute/PrivateRoute'
+
 
 function App() {
   return (
@@ -19,8 +21,8 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-      <Route path="/classes" component={Classes} />
-      <Route path='/add-class' component={AddClass} />
+      <PrivateRoute path="/classes" component={Classes} />
+      <PrivateRoute path='/add-class' component={AddClass} />
       <Footer />
     </div>
   );
