@@ -1,5 +1,5 @@
 import React from "react";
-import {Card} from "reactstrap";
+import {Button, Card} from "reactstrap";
 
 
 export default function ClassesCard (props) {
@@ -9,6 +9,7 @@ export default function ClassesCard (props) {
                 <p> {props.singleClass.name} </p>
                 <p> {props.singleClass.duration} </p>
                 <p> {props.singleClass.intensity} </p>
+                <Button className="register-button" style={{marginLeft:"30%", marginBottom:"5%"}}> RSVP</Button>
             </Card>
         </span>
     )
