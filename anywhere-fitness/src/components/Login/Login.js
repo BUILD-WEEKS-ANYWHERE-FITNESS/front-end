@@ -141,14 +141,19 @@ const Login = (props) => {
                                     />
                                     <FormFeedback>Please enter password.</FormFeedback>
                                 </FormGroup>
-                                <Button className="login-button" onClick={login}>Instructor Login</Button>
-                                <Button className="login-button" onClick={login1}>Client Login</Button>
-                                <Link to="/register"><Button className="register-button" onKeyPress={(e)=>{e.key === "enter" && e.preventDefault();}}>Register</Button></Link>
                                 <FormGroup check>
                                     <Label check>
                                         <Input type="checkbox" />{' '}Remember Me
-                            </Label>
+                                    </Label>
                                 </FormGroup>
+
+                                <p>
+                                    <Button className="login-button" onClick={login}>Instructor Login</Button>
+                                    <Button className="login-button" onClick={login1}>Client Login</Button>
+                                </p>
+                                <p style={{marginTop:"7.5%" ,fontSize:"0.75rem"}}> Or
+                                <Link to="/register"><Button className="register-button" onKeyPress={(e)=>{e.key === "enter" && e.preventDefault();}}>Register Here</Button></Link>
+                                 </p>
                             </Form>
                         </CardBody>
                     </div>
