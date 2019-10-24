@@ -7,7 +7,7 @@ import axios from "axios";
 const Classes = (props) => {
     //Fake data, for now
     const [search, setSearch] = useState({
-    searchTerm: "",
+    searchTerm: " ",
     duration: "",
     type: "",
     intensity: "",
@@ -39,6 +39,7 @@ const Classes = (props) => {
         }
       ])
 
+      let notFound = false;
       const [searchResults, setSearchResults] = useState([]);
 
       useEffect(() => {
@@ -57,8 +58,11 @@ const Classes = (props) => {
                                                  )
 
                 setSearchResults(resultIntensity);
+                console.log(searchResults.length);
+
 
       }, [search]);
+
 
       //Controlled Inputs
       //
@@ -91,6 +95,7 @@ const Classes = (props) => {
 
         </div>
         <div className="class-cards-container">
+            <h6>{(searchResults.length===0 ) ? `Sorry, can't find anything!` : ''} </h6>
             {searchResults.map(singleClass => (
                     <ClassesCard singleClass={singleClass} />
                 ))}
