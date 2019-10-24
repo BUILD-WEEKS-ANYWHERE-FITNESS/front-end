@@ -121,7 +121,7 @@
   }
 }
 .section-content .content-card p {
-  font-size: 1.75rem;
+  font-size: 1rem;
 }
 .section-content .primary-card {
   background-color: #115173;
@@ -289,8 +289,20 @@ header button {
   justify-content: space-around;
   text-align: center;
 }
+@media (max-width: 500px) {
+  .class-cards-container {
+    align-items: center;
+    flex-flow: column nowrap;
+  }
+}
 .class-cards {
   width: 20%;
+}
+@media (max-width: 500px) {
+  .class-cards {
+    width: 50%;
+    margin-bottom: 10%;
+  }
 }
 .classes {
   padding-top: 5%;
