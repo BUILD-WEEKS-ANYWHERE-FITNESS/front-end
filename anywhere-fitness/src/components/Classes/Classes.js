@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Input } from 'reactstrap';
+import { getData } from '../../actions'
 
-const Classes = () => {
+const Classes = (props) => {
+
+  // useEffect(() => {
+  //   props.getData()
+  //   console.log(props,`classList`)
+  // }, [])
 
   return (
     <div className="card-container">

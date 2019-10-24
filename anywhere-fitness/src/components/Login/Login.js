@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Card, Button, CardHeader, CardBody, CardTitle, Form, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 import { Link } from "react-router-dom";
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
-const Login = () => {
+const Login = (props) => {
     const [formData, setFormData] = useState({
         username: '',
         password: '',
@@ -22,6 +23,32 @@ const Login = () => {
     const changeHandler = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value, [`${e.target.name}Touched`]: true});
     }
+
+   const login1 = e => {
+        e.preventDefault();
+        axiosWithAuth()
+          .post("https://fitnessanywhere.herokuapp.com/api/auth/clients/login", formData)
+          .then(res => {
+            console.log("hello");
+            console.log(res.data);
+            localStorage.setItem("token", res.data.payload);
+            props.history.push("/classes");
+          })
+          .catch(err => console.log(err));
+      };
+
+    const login = e => {
+        e.preventDefault();
+        axiosWithAuth()
+        .post("https://fitnessanywhere.herokuapp.com/api/auth/instructors/login", formData)
+        .then(res => {
+            console.log("hello");
+            console.log(res.data);
+            localStorage.setItem("token", res.data.payload);
+            props.history.push("/add-class");
+        })
+        .catch(err => console.log(err));
+    };
 
     return (
 
@@ -62,7 +89,8 @@ const Login = () => {
                                 />
                                 <FormFeedback>Please enter password.</FormFeedback>
                             </FormGroup>
-                            <Button className="login-button" onClick={formValidation}>Login</Button>
+                            <Button className="login-button" onClick={formValidation, login}>Instructor Login</Button>
+                            <Button className="login-button" onClick={formValidation, login1}>Client Login</Button>
                             <Link to="/register"><Button className="register-button">Register</Button></Link>
                             <FormGroup check>
                                 <Label check>
