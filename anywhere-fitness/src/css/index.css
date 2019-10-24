@@ -7,107 +7,6 @@
     flex-flow: column wrap;
   }
 }
-.card-container {
-  display: flex;
-  align-items: center;
-  flex-flow: column nowrap;
-  background-color: #115173;
-  width: 100%;
-  height: 100%;
-  padding-top: 10%;
-  padding-bottom: 10%;
-}
-.card-container Button {
-  border-radius: 8px;
-}
-.card-container .login-button {
-  margin-right: 5%;
-  background-color: #ffd700;
-  border: 1px solid #ffd700;
-  color: #115173;
-  font-weight: bold;
-}
-.card-container .login-button:hover {
-  background-color: #115173;
-  color: #ffd700;
-}
-.card-container .register-button {
-  background-color: #115173;
-  color: white;
-}
-.card-container .register-button:hover {
-  color: #ffd700;
-  background-color: #022c43;
-  border: 1px solid #ffd700;
-}
-.form-card {
-  width: 75%;
-  height: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-.form-card img {
-  width: 50%;
-}
-@media (max-width: 500px) {
-  .form-card img {
-    display: none;
-    width: 0%;
-  }
-}
-.half {
-  width: 50%;
-}
-@media (max-width: 500px) {
-  .half {
-    width: 100%;
-  }
-}
-.form-card-body {
-  width: 100%;
-  padding-top: 15%;
-  padding-bottom: 5%;
-}
-.form-card-body Input {
-  width: 75%;
-}
-@media (max-width: 500px) {
-  .form-card-body {
-    width: 100%;
-    padding-right: 5%;
-    padding-left: 5%;
-  }
-}
-header h1 {
-  margin: 0;
-  color: #053f5e;
-  font-size: 30px;
-}
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-header .nav-links {
-  padding: 10px;
-  margin: 0 10px;
-  color: #053f5e;
-}
-header .nav-links .nav-item-style:hover {
-  color: #022c43;
-}
-header .active {
-  color: #115173;
-}
-header button {
-  background: #ffd700;
-  border: none;
-  border-radius: 8px;
-  padding: 5px 10px;
-  color: #4f5a5f;
-  font-weight: bold;
-}
 .main-hero {
   background-color: #115173 !important;
 }
@@ -355,16 +254,13 @@ header nav {
   justify-content: space-between;
   align-items: flex-end;
 }
-header .my-link {
-  text-decoration: none !important;
-}
 header .nav-links {
   padding: 10px;
   margin: 0 10px;
   color: #053f5e;
 }
 header .nav-links .nav-item-style:hover {
-  color: #022c43 !important;
+  color: #022c43;
 }
 header .active {
   color: #115173;
@@ -385,7 +281,7 @@ header button {
   padding-left: 5%;
   padding-right: 5%;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
 }
 .class-cards {
