@@ -63,7 +63,6 @@ const Classes = (props) => {
 
       }, [search]);
 
-
       //Controlled Inputs
       //
       const changeHandler = (e) => {

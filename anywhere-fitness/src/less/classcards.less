@@ -9,9 +9,17 @@
     flex-flow: row wrap;
     justify-content: space-around;
     text-align: center;
+    @media @mobile {
+        align-items: center;
+        flex-flow: column nowrap;
+    }
 
 }
 
 .class-cards {
     width: 20%;
+    @media @mobile {
+        width: 50%;
+        margin-bottom: 10%;
+    }
 }
