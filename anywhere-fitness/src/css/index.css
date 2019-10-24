@@ -186,9 +186,11 @@
   border-radius: 8px;
 }
 .card-container .login-button {
+  margin-top: 4%;
   margin-right: 5%;
   background-color: #ffd700;
   border: 1px solid #ffd700;
+  font-size: 0.9rem;
   color: #115173;
   font-weight: bold;
 }
@@ -199,6 +201,9 @@
 .card-container .register-button {
   background-color: #115173;
   color: white;
+  margin-left: 5%;
+  width: 40%;
+  font-size: 0.75rem;
 }
 .card-container .register-button:hover {
   color: #ffd700;
