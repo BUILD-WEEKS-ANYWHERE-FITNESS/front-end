@@ -276,11 +276,25 @@ header button {
   color: #4f5a5f;
   font-weight: bold;
 }
+.class-cards-container {
+  display: flex;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+.class-cards {
+  width: 20%;
+}
 .classes {
   padding-top: 5%;
   background-color: white;
   width: 75%;
-  height: 400px;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
@@ -293,7 +307,7 @@ header button {
 .classes .class-search-card {
   margin-top: 5%;
   background-color: white;
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-flow: nowrap;
   justify-content: space-around;
