@@ -1,6 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Card, Button, CardHeader, CardBody, CardTitle, Form, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 import { Link } from "react-router-dom";
+//ANIMATION CODE
+import { fadeInDown } from 'react-animations'
+import styled, { keyframes } from "styled-components";
+const SlideInDownAnimation = keyframes`${fadeInDown}`;
+const SlideInDownDiv = styled.div`
+  animation: 2s ${SlideInDownAnimation}; margin-left:20%;
+`;
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 const Login = (props) => {
@@ -53,6 +60,7 @@ const Login = (props) => {
     return (
 
         <div className="card-container">
+        <SlideInDownDiv>
             <Card className="form-card">
                 <div className="half">
                     <CardBody className="form-card-body login">
@@ -103,6 +111,7 @@ const Login = (props) => {
 
                 <img src={require("../../images/img2.jpg")} />
             </Card>
+        </SlideInDownDiv>
         </div>
     )
 }
