@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, CardHeader, CardBody, CardTitle,Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-<<<<<<< HEAD
+import axios from 'axios';
 //ANIMATION CODE
 import { fadeInDown } from 'react-animations'
 import styled, { keyframes } from "styled-components";
@@ -10,9 +10,6 @@ const SlideInDownDiv = styled.div`
 `;
 
 
-=======
-import axios from 'axios'
->>>>>>> 51c1796e5b299dd08c55c0a1d97358cc86a77fa1
 
 const Register = (props) => {
     const [user, setUser] = useState({
@@ -43,7 +40,7 @@ const Register = (props) => {
         })
         .catch(err => console.log(err));
     };
-  
+
 
     return (
     <div className="card-container">

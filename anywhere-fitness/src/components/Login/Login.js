@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 //ANIMATION CODE
 import { fadeInDown } from 'react-animations'
 import styled, { keyframes } from "styled-components";
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
 const SlideInDownAnimation = keyframes`${fadeInDown}`;
 const SlideInDownDiv = styled.div`
   animation: 2s ${SlideInDownAnimation}; margin-left:20%;
 `;
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 const Login = (props) => {
     const [formData, setFormData] = useState({
