@@ -54,7 +54,7 @@ const Register = (props) => {
                 {//Email Input
                 }
                   <FormGroup>
-                    <Label for="exampleEmail">username</Label>
+                    <Label for="exampleEmail">Username</Label>
                     <Input type="text" name="username" id="exampleUsername" placeholder="Username" onChange={changeHandler} />
                   </FormGroup>
 
