@@ -28,13 +28,13 @@ import {
         return {
           ...state,
           isFetching: false,
-          data: action.payload
+          data: action.payload.data
         };
       case GET_DATA_FAILURE:
         return {
           ...state,
           isFetching: false,
-          error: `Unable to load your friend's list at this time: ${action.payload}`
+          error: ` ${action.payload}`
         };
       case POST_DATA_START:
         return {
@@ -52,7 +52,7 @@ import {
         return {
           ...state,
           isFetching: false,
-          error: `Unable to post to your friend's list at this time: ${action.payload}`
+          error: ` ${action.payload}`
         };
       case DELETE_DATA_START:
         return {
@@ -70,7 +70,7 @@ import {
         return {
           ...state,
           isFetching: false,
-          error: `Unable to delete from your friend's list at this time: ${action.payload}`
+          error: `: ${action.payload}`
         };
       default:
         return state;

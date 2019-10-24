@@ -26,8 +26,8 @@ const Register = (props) => {
         )
         .then(res => {
           console.log("register")
-          // localStorage.setItem("token", res.data.payload);
-          props.history.push("https://fitnessanywhere.herokuapp.com/api/auth/clients/login");
+          localStorage.setItem("token", res.data.payload);
+          props.history.push("/login");
         })
         .catch(err => console.log(err));
     };

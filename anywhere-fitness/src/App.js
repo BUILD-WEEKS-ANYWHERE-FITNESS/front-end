@@ -20,9 +20,9 @@ function App() {
       <Header />
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
-      <Route path="/register" component={Register} />
-      <PrivateRoute path="/classes" component={Classes} />
+      <Route path="/register" component={Register} />    
       <PrivateRoute path='/add-class' component={AddClass} />
+      <PrivateRoute path="/classes" component={Classes} />
       <Footer />
     </div>
   );

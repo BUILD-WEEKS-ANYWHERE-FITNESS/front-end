@@ -8,7 +8,7 @@ export const getData = () => {
     return dispatch => {
       dispatch({ type: GET_DATA_START });
       axiosWithAuth()
-        .get()
+        .get('https://fitnessanywhere.herokuapp.com/api/classes')
         .then(res => {
           dispatch({ type: GET_DATA_SUCCESS, payload: res.data });
         })
@@ -37,8 +37,8 @@ export const postData = () => {
   };
 
 export const UPDATE_DATA_START = "UPDATE_DATA_START";
-export const UPDATE_DATA_SUCCESS = "UPDAT_DATA_SUCCESS";
-export const UPDATE_DATA_FAILURE = "UPDAT_DATA_FAILURE";
+export const UPDATE_DATA_SUCCESS = "UPDATE_DATA_SUCCESS";
+export const UPDATE_DATA_FAILURE = "UPDATE_DATA_FAILURE";
 
 export const updateData = () => {
     return dispatch => {
