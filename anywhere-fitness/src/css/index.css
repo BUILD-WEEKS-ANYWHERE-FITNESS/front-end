@@ -315,22 +315,22 @@ header button {
   flex-flow: column nowrap;
 }
 .classes .class-search-bar {
-  width: 30%;
+  width: 24%;
   background-color: white;
   color: black;
 }
 .classes .class-search-card {
   margin-top: 5%;
   background-color: white;
-  width: 70%;
+  width: 50%;
   display: flex;
-  flex-flow: nowrap;
-  justify-content: space-around;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 .classes .class-search-card .class-search-drops {
   background-color: white;
   color: black;
-  width: 30%;
+  width: 24%;
 }
 footer {
   text-align: center;
