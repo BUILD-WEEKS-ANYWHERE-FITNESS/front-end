@@ -5,7 +5,15 @@ import axios from "axios";
 
 
 const Classes = (props) => {
-    //Fake data, for now
+    //let classes = [];
+    //axios.get("https://fitnessanywhere.herokuapp.com/api/classes")
+    //.then(response => {
+    //  response.forEach(class => {
+    //      classes.push(class);
+    //  })
+    //})
+    //Fake data for now since endpoints are not functioning currently.
+
     const [search, setSearch] = useState({
     searchTerm: " ",
     duration: "",
