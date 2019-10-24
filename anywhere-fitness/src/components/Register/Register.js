@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Card, CardHeader, CardBody, CardTitle,Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+<<<<<<< HEAD
 //ANIMATION CODE
 import { fadeInDown } from 'react-animations'
 import styled, { keyframes } from "styled-components";
@@ -9,11 +10,13 @@ const SlideInDownDiv = styled.div`
 `;
 
 
+=======
+import axios from 'axios'
+>>>>>>> 51c1796e5b299dd08c55c0a1d97358cc86a77fa1
 
-
-const Register = () => {
+const Register = (props) => {
     const [user, setUser] = useState({
-        email: "",
+        username: "",
         password: "",
         confirmPassword: "",
         role: "",
@@ -25,6 +28,22 @@ const Register = () => {
     const changeHandler = event => {
         setUser({...user, [event.target.name]: event.target.value});
     }
+
+    const register = e => {
+      e.preventDefault();
+      axios
+        .post(
+          "https://fitnessanywhere.herokuapp.com/api/auth/clients/register",
+          user
+        )
+        .then(res => {
+          console.log("register")
+          localStorage.setItem("token", res.data.payload);
+          props.history.push("/login");
+        })
+        .catch(err => console.log(err));
+    };
+  
 
     return (
     <div className="card-container">
@@ -38,8 +57,8 @@ const Register = () => {
                 {//Email Input
                 }
                   <FormGroup>
-                    <Label for="exampleEmail">Email</Label>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="Email" onChange={changeHandler} />
+                    <Label for="exampleEmail">username</Label>
+                    <Input type="text" name="username" id="exampleUsername" placeholder="Username" onChange={changeHandler} />
                   </FormGroup>
 
                   {//Password Input
@@ -67,7 +86,7 @@ const Register = () => {
                     </Input>
                     <br />
                   </FormGroup>
-                <Button className="btn btn-secondary register-button">Submit</Button>
+                <Button className="btn btn-secondary register-button" onClick={register} >Submit</Button>
                   </Form>
                   {console.log(user)}
                 </CardBody>
