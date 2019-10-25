@@ -121,7 +121,7 @@
   }
 }
 .section-content .content-card p {
-  font-size: 1.75rem;
+  font-size: 1rem;
 }
 .section-content .primary-card {
   background-color: #115173;
@@ -186,9 +186,11 @@
   border-radius: 8px;
 }
 .card-container .login-button {
+  margin-top: 4%;
   margin-right: 5%;
   background-color: #ffd700;
   border: 1px solid #ffd700;
+  font-size: 0.9rem;
   color: #115173;
   font-weight: bold;
 }
@@ -199,6 +201,9 @@
 .card-container .register-button {
   background-color: #115173;
   color: white;
+  margin-left: 5%;
+  width: 40%;
+  font-size: 0.75rem;
 }
 .card-container .register-button:hover {
   color: #ffd700;
@@ -272,6 +277,7 @@ header button {
   padding: 5px 10px;
   color: #4f5a5f;
   font-weight: bold;
+  margin-top: -5%;
 }
 .class-cards-container {
   display: flex;
@@ -284,8 +290,20 @@ header button {
   justify-content: space-around;
   text-align: center;
 }
+@media (max-width: 500px) {
+  .class-cards-container {
+    align-items: center;
+    flex-flow: column nowrap;
+  }
+}
 .class-cards {
   width: 20%;
+}
+@media (max-width: 500px) {
+  .class-cards {
+    width: 50%;
+    margin-bottom: 10%;
+  }
 }
 .classes {
   padding-top: 5%;
@@ -297,22 +315,22 @@ header button {
   flex-flow: column nowrap;
 }
 .classes .class-search-bar {
-  width: 30%;
+  width: 24%;
   background-color: white;
   color: black;
 }
 .classes .class-search-card {
   margin-top: 5%;
   background-color: white;
-  width: 70%;
+  width: 50%;
   display: flex;
-  flex-flow: nowrap;
-  justify-content: space-around;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 .classes .class-search-card .class-search-drops {
   background-color: white;
   color: black;
-  width: 30%;
+  width: 24%;
 }
 footer {
   text-align: center;

@@ -30,8 +30,8 @@ const Home = () => {
                         </div>
                         <div className="content-card primary-card">
                             <div className="card-text">
-                                <h4>Take the stress away from planning</h4>
-                                <p>Whatever it is that you're planning for, it doesn't have to be boring or difficult. Have fun doing it with ease.</p>
+                                <h4>Mobile fitness for a mobile world</h4>
+                                <p>No gym? No problem. With Anywhere Fitness, you have access to hundreds of trainer-led fitness classes wherever your go.</p>
                             </div>
                         </div>
                     </div>
@@ -42,8 +42,8 @@ const Home = () => {
                     <div className="section-content">
                         <div className="content-card secondary-card">
                             <div className="card-text">
-                                <h4>Get the whole crew involved</h4>
-                                <p>Easily include everyone in your plans by sharing your ideas. Get inspired by others and share the excitement.</p>
+                                <h4>New to Fitness?</h4>
+                                <p>Our program has classes of all levels, allowing you to explore different methods of fitness at a skill level you feel comfortable with.</p>
                             </div>
                         </div>
                         <div className="img-container">
@@ -57,18 +57,18 @@ const Home = () => {
                     <div className="features-parent">
                         <div className="feature-block">
                             <i className="fas fa-plane-departure"></i>
-                            <h3>Vacation Planning</h3>
-                            <p>Plan that trip for an exotic adventure</p>
+                            <h3>Step 1:</h3>
+                            <p>View our classes, and find a class that works best for you.</p>
                         </div>
                         <div className="feature-block">
                             <i className="fas fa-home"></i>
-                            <h3>Goals Planning</h3>
-                            <p>Set long term or short term goals with ease</p>
+                            <h3>Step 2:</h3>
+                            <p> Once you've found a class you'd like to join, hit "reserve a space".</p>
                         </div>
                         <div className="feature-block">
                             <i className="fas fa-users"></i>
-                            <h3>Share Your Plans</h3>
-                            <p>Share your plans with confidence</p>
+                            <h3>Step 3:</h3>
+                            <p>That's it! You're ready to go. Anytime, anywhere.</p>
                         </div>
                     </div>
                 </Container>
