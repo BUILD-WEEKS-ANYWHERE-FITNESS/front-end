@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Card, Input } from 'reactstrap';
 import ClassesCard from "./ClassesCard";
+import { ClassContext } from '../context/classContext';
 import axios from "axios";
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
-import { data } from '../../data';
 
 
 const Classes = (props) => {
+
+  const { session, addClass }  = useContext(ClassContext);
     //let classes = [];
     //axios.get("https://fitnessanywhere.herokuapp.com/api/classes")
     //.then(response => {
@@ -16,10 +18,10 @@ const Classes = (props) => {
     //})
     //Fake data for now since endpoints are not functioning currently.
 
-    const [classList, setClassList] = useState(data);
-    console.log(data);
-  useEffect(() =>{
-    setClassList(data);
+    const [classList, setClassList] = useState(session);
+    console.log(session);
+    useEffect(() =>{
+    setClassList(session);
   }, [])
 
 
@@ -40,7 +42,7 @@ const Classes = (props) => {
 
 
       useEffect(() => {
-        setClassList(data);
+        // setClassList(session);
          const resultSearch = classList.filter(classObj =>
                              classObj.name.toLowerCase().includes(search.searchTerm.toLowerCase())
                                         );

@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Col, Container, Card, CardBody, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { axiosWithAuth } from '../../utils/axiosWithAuth';
+import { axiosWithAuth } from '../../utils/axiosWithAuth'; 
+import { ClassContext } from '../context/classContext';
 import axios from 'axios'
 
 
 const AddClass = (props) => {
-    const [newClass, setNewClass] = useState([])
+    const [newClass, setNewClass] = useState({})
+    const [ myClass, setMyClass ] = useState({
+        name: "",
+        type: "",
+        duration: "",
+        intensity: "" 
+    })
+
+    const { session, addClass }  = useContext(ClassContext);
+
+    useEffect(() =>{
+        setNewClass(session);
+      }, [])
+
     const handleSubmit = e => {
-        e.preventDefault();
-        // axios
-        // .post('https://fitnessanywhere.herokuapp.com/api/classes', newClass)
-        // .then(res => {
-        //     console.log(res)
-        // })    
-        
+        addClass(myClass);
+        console.log(session)
     }
 
     const handleChanges = e => {
         let name = e.target.name;
-
-        setNewClass({ ...newClass, [name]: e.target.value })
+        setMyClass({ ...myClass, [name]: e.target.value })
     }
-
+    // console.log(session, myClass, `AddClass`)
     // Date used to pre-fill date/time picker with current day. Not sure if needed or not.
     const today = new Date();
     const month = ("0" + (today.getMonth() + 1)).slice(-2);
@@ -29,6 +37,16 @@ const AddClass = (props) => {
     const year = today.getFullYear();
     const dateStringValue = `${year}-${month}-${day}`;
     const dateTimeString = `${dateStringValue}T08:00`;
+
+
+     // const handleSubmit = e => {
+    //     e.preventDefault();
+    //     axios
+    //     .post('https://fitnessanywhere.herokuapp.com/api/classes', newClass)
+    //     .then(res => {
+    //         console.log(res)
+    //     })   
+    // }
 
     return (
         <div className="add-class">
@@ -78,11 +96,11 @@ const AddClass = (props) => {
                             <FormGroup row>
                                 <Label for="intensity" sm={2}>Intensity</Label>
                                 <Col sm={10}>
-                                    <Input type="select" name="intensity" id="intensity" value={props.intensity}>
+                                    <Input type="select" name="intensity" id="intensity" value={props.intensity} onChange={handleChanges} >
                                         <option value="">Select an intensity</option>
-                                        <option value="beginner">Beginner</option>
-                                        <option value="intermediate">Intermediate</option>
-                                        <option value="advanced">Advanced</option>
+                                        <option value="Beginner">Beginner</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Advanced">Advanced</option>
                                     </Input>
                                 </Col>
                             </FormGroup>

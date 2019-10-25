@@ -1,5 +1,5 @@
-//name, duration, type, intensity
-export let data =
+
+export default
 [{
     name:'Hot Yoga',
     duration:'30 mins',
@@ -16,3 +16,4 @@ export let data =
     type:'Cardio',
     intensity:'Beginner'
 }]
+
