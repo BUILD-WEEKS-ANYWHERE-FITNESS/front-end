@@ -1,19 +1,17 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 //ANIMATION CODE
-import { bounceInLeft } from 'react-animations'
 import styled, { keyframes } from "styled-components";
-const FadeInAnimation = keyframes`${bounceInLeft}`;
-const FadeInDiv = styled.div`
-  animation: 2s ${FadeInAnimation};
-`;
+// const FadeInAnimation = keyframes`${bounceInLeft}`;
+// const FadeInDiv = styled.div`
+//   animation: 2s ${FadeInAnimation};
+// `;
 
 
 
 const Home = () => {
     return (
         <>
-        <FadeInDiv>
             <section className="main-hero">
                 <div className="hero-image">
                     <Container>
@@ -22,9 +20,8 @@ const Home = () => {
                             <h3>Empowering you to take control of your health</h3>
                         </div>
                     </Container>
-                </div>
+                </div> 
             </section>
-            </FadeInDiv>
             <main className="front-page-sections">
                 <Container>
                     <div className="section-content">

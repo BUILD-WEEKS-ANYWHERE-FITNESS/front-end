@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container } from 'reactstrap';
 import Login from './components/Login/Login';
 import logo from './logo.svg';
@@ -18,11 +18,13 @@ function App() {
   return (
     <div>
       <Header />
-      <Route exact path="/" component={Home} />
-      <Route path="/login" component={Login} />
-      <Route path="/register" component={Register} />    
-      <PrivateRoute path='/add-class' component={AddClass} />
-      <PrivateRoute path="/classes" component={Classes} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />    
+        <PrivateRoute path='/add-class' component={AddClass} />
+        <PrivateRoute path="/classes" component={Classes} />
+      </Switch>
       <Footer />
     </div>
   );

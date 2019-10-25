@@ -28,6 +28,7 @@ const Register = (props) => {
 
     const register = e => {
       e.preventDefault();
+      if(user.role == "client"){
       axios
         .post(
           "https://fitnessanywhere.herokuapp.com/api/auth/clients/register",
@@ -39,7 +40,22 @@ const Register = (props) => {
           props.history.push("/login");
         })
         .catch(err => console.log(err));
-    };
+
+    } else if(user.role == "instructor") {
+      axios
+      .post(
+        "https://fitnessanywhere.herokuapp.com/api/auth/instructors/register",
+        user
+      )
+      .then(res => {
+        console.log("register")
+        localStorage.setItem("token", res.data.payload);
+        props.history.push("/login");
+      })
+      .catch(err => console.log(err));
+  };
+  } 
+  
 
 
     return (

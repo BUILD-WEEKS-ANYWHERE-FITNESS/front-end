@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Card, Input } from 'reactstrap';
 import ClassesCard from "./ClassesCard";
 import axios from "axios";
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
+import { data } from '../../data';
 
 
 const Classes = (props) => {
@@ -14,40 +16,16 @@ const Classes = (props) => {
     //})
     //Fake data for now since endpoints are not functioning currently.
 
+    const [classList, setClassList] = useState([])
+    
     const [search, setSearch] = useState({
     searchTerm: " ",
     duration: "",
     type: "",
     intensity: "",
     })
-    const [classes,setClasses] = useState([
-        {
-        name: 'Intro to Yoga',
-        duration: '30 mins',
-        type: "yoga",
-        intensity: 'beginner'
-        },
-        {
-          name: 'Intense Pilates',
-          duration: '60 mins',
-          type: "pilates",
-          intensity: 'intermediate'
-        },
-        {
-          name: 'Masterclass: Yoga',
-          duration: '45 mins',
-          type: "yoga",
-          intensity: 'advanced'
-        },
-        {
-          name: 'Intro to Pilates',
-          duration: '30 mins',
-          type: "pilates",
-          intensity: 'beginner'
-        }
-      ])
-
-      let notFound = false;
+    const [classes,setClasses] = useState([])
+    
       const [searchResults, setSearchResults] = useState([]);
 
       useEffect(() => {
@@ -64,12 +42,13 @@ const Classes = (props) => {
          const resultIntensity = resultType.filter(classObj =>
                                                  classObj.intensity.toLowerCase().includes(search.intensity.toLowerCase())
                                                  )
+         setClassList(resultIntensity);
+      },[search])
 
-                setSearchResults(resultIntensity);
-                console.log(searchResults.length);
-
-
-      }, [search]);
+  useEffect(() =>{
+    setClassList(data);
+  }, [])
+  console.log(classList)
 
       //Controlled Inputs
       //
