@@ -19,7 +19,7 @@ function App() {
 
 
   // const [session] = useState(data);
-	const [session, setSession] = useState([data]);
+	const [session, setSession] = useState(data);
 
 	function addClass (item) {
 		setSession([...session, item])
@@ -34,7 +34,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />    
+        <Route path="/register" component={Register} />
         <PrivateRoute path='/add-class' component={AddClass} />
         <PrivateRoute path="/classes" component={Classes} />
       </Switch>
