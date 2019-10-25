@@ -1,28 +1,29 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useReducer } from 'react';
 import { Card, Input } from 'reactstrap';
 import ClassesCard from "./ClassesCard";
 import { ClassContext } from '../context/classContext';
 import axios from "axios";
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
-
+import { reducer, data } from '../../reducers'
 
 const Classes = (props) => {
+const [ state, dispatch ] = useReducer(reducer, data)
 
-  const { session, addClass }  = useContext(ClassContext);
-    //let classes = [];
-    //axios.get("https://fitnessanywhere.herokuapp.com/api/classes")
-    //.then(response => {
-    //  response.forEach(class => {
-    //      classes.push(class);
-    //  })
-    //})
-    //Fake data for now since endpoints are not functioning currently.
+  // const { session, addClass }  = useContext(ClassContext);
+  //   //let classes = [];
+  //   //axios.get("https://fitnessanywhere.herokuapp.com/api/classes")
+  //   //.then(response => {
+  //   //  response.forEach(class => {
+  //   //      classes.push(class);
+  //   //  })
+  //   //})
+  //   //Fake data for now since endpoints are not functioning currently.
 
-    const [classList, setClassList] = useState(session);
-    console.log(session);
-    useEffect(() =>{
-    setClassList(session);
-  }, [])
+  //   const [classList, setClassList] = useState(session);
+  //   console.log(session);
+  //   useEffect(() =>{
+  //   setClassList(session);
+  // }, [])
 
 
     const [searchResults, setSearchResults] = useState([]);
@@ -41,24 +42,24 @@ const Classes = (props) => {
 
 
 
-      useEffect(() => {
-        // setClassList(session);
-         const resultSearch = classList.filter(classObj =>
-                             classObj.name.toLowerCase().includes(search.searchTerm.toLowerCase())
-                                        );
-        console.log(resultSearch);
-         const resultDuration = resultSearch.filter(classObj =>
-                                              classObj.duration.includes(search.duration)
-                                              );
+      // useEffect(() => {
+      //   // setClassList(session);
+      //    const resultSearch = classList.filter(classObj =>
+      //                        classObj.name.toLowerCase().includes(search.searchTerm.toLowerCase())
+      //                                   );
+      //   console.log(resultSearch);
+      //    const resultDuration = resultSearch.filter(classObj =>
+      //                                         classObj.duration.includes(search.duration)
+      //                                         );
 
-         const resultType = resultDuration.filter(classObj =>
-                                                 classObj.type.toLowerCase().includes(search.type.toLowerCase())
-                                                 );
-         const resultIntensity = resultType.filter(classObj =>
-                                                 classObj.intensity.toLowerCase().includes(search.intensity.toLowerCase())
-                                                 );
-         setSearchResults(resultIntensity);
-      },[search])
+      //    const resultType = resultDuration.filter(classObj =>
+      //                                            classObj.type.toLowerCase().includes(search.type.toLowerCase())
+      //                                            );
+      //    const resultIntensity = resultType.filter(classObj =>
+      //                                            classObj.intensity.toLowerCase().includes(search.intensity.toLowerCase())
+      //                                            );
+      //    setSearchResults(resultIntensity);
+      // },[search])
 
   return (
     <div className="card-container">
@@ -86,10 +87,13 @@ const Classes = (props) => {
 
             </div>
             <div className="class-cards-container">
-                <h6>{(searchResults.length===0 ) ? `Sorry, can't find anything!` : ''} </h6>
+                {/* <h6>{(searchResults.length===0 ) ? `Sorry, can't find anything!` : ''} </h6>
                 {searchResults.map(singleClass => (
-                        <ClassesCard singleClass={singleClass} />
-                    ))}
+                        <ClassesCard singleClass={singleClass} data={data} dispatch={dispatch} />
+                    ))} */}
+                {state.map(data => {
+                return <ClassesCard data={data} dispatch={dispatch} />
+            })}
             </div>
         </Card>
     </div>
