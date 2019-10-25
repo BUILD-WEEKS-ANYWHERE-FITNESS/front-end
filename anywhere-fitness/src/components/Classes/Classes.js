@@ -1,109 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Input } from 'reactstrap';
-import ClassesCard from "./ClassesCard";
-import axios from "axios";
-
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
+import  ClassesCard  from './ClassesCard'
+import { data } from '../../data'
+import axios from 'axios';
 
 const Classes = (props) => {
-    //Fake data, for now
-    const [search, setSearch] = useState({
-    searchTerm: " ",
-    duration: "",
-    type: "",
-    intensity: "",
-    })
-    const [classes,setClasses] = useState([
-        {
-        name: 'Intro to Yoga',
-        duration: '30 mins',
-        type: "yoga",
-        intensity: 'beginner'
-        },
-        {
-          name: 'Intense Pilates',
-          duration: '60 mins',
-          type: "pilates",
-          intensity: 'intermediate'
-        },
-        {
-          name: 'Masterclass: Yoga',
-          duration: '45 mins',
-          type: "yoga",
-          intensity: 'advanced'
-        },
-        {
-          name: 'Intro to Pilates',
-          duration: '30 mins',
-          type: "pilates",
-          intensity: 'beginner'
-        }
-      ])
+  const [classList, setClassList] = useState([])
+  
 
-      let notFound = false;
-      const [searchResults, setSearchResults] = useState([]);
+  useEffect(() =>{
+    setClassList(data);
+  }, [])
+  console.log(classList)
 
-      useEffect(() => {
-          const resultSearch = classes.filter(classObj =>
-                             classObj.name.toLowerCase().includes(search.searchTerm.toLowerCase())
-                                        );
-         const resultDuration = resultSearch.filter(classObj =>
-                                              classObj.duration.includes(search.duration)
-                                              )
-
-         const resultType = resultDuration.filter(classObj =>
-                                                 classObj.type.toLowerCase().includes(search.type.toLowerCase())
-                                                 )
-         const resultIntensity = resultType.filter(classObj =>
-                                                 classObj.intensity.toLowerCase().includes(search.intensity.toLowerCase())
-                                                 )
-
-                setSearchResults(resultIntensity);
-                console.log(searchResults.length);
+  
+  // useEffect(() => {
+  //   axiosWithAuth()
+  //   .get(`https://fitnessanywhere.herokuapp.com/api/classes`, classList)
+  //   .then(res =>  
+  //     setClassList(res.data)) 
+  //   .catch(err => console.log(err))
+  // }, [])
 
 
-      }, [search]);
-
-
-      //Controlled Inputs
-      //
-      const changeHandler = (e) => {
-          setSearch({...search, [e.target.name]: e.target.value})
-      }
   return (
     <div className="card-container">
     <div className="classes">
         <h1> Search Classes </h1>
         <div className="class-search-card">
-            <Input className="class-search-bar" type="search" name="searchTerm" id="searchTerm" placeholder="Search" onChange={changeHandler}/>
-            <Input className="class-search-drops" type="select" name="duration" id="duration" onChange={changeHandler}>
-              <option value="">Duration</option>
-              <option value="30 mins">30 mins</option>
-              <option value="45 mins">45 mins</option>
-              <option value="60 mins">60 mins</option>
+            <Input className="class-search-bar" type="search" name="search" id="search" placeholder="Search" />
+            <Input className="class-search-drops" type="select" name="select" id="select">
+              <option>Duration</option>
+              <option>30 mins</option>
+              <option>45 mins</option>
+              <option>60 mins</option>
         </Input>
-        <Input className="class-search-drops" type="select" name="type" id="type" onChange={changeHandler}>
-              <option value="">Type</option>
-              <option value="Yoga">Yoga</option>
-              <option value="Pilates">Pilates</option>
+        <Input className="class-search-drops" type="select" name="select" id="select">
+              <option>Type</option>
+              <option>Yoga</option>
+              <option>Pilates</option>
         </Input>
-        <Input className="class-search-drops" type="select" name="intensity" id="intensity" onChange={changeHandler}>
-              <option value="">Intensity</option>
-              <option value="Beginner">Beginner</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Advances">Advanced</option>
-        </Input>
-
-        </div>
-        <div className="class-cards-container">
-            <h6>{(searchResults.length===0 ) ? `Sorry, can't find anything!` : ''} </h6>
-            {searchResults.map(singleClass => (
-                    <ClassesCard singleClass={singleClass} />
-                ))}
-        </div>
 
             </div>
-
-    </div>
+            </div>
+            <div>{classList.map(e=> (
+              <ClassesCard singleClass={e} />
+            ))
+            }
+            </div>
+        </div>
 
   );
 }

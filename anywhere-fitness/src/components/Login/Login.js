@@ -125,7 +125,7 @@ const Login = (props) => {
                                 </FormGroup>
                                 <Button className="login-button" onClick={login}>Instructor Login</Button>
                                 <Button className="login-button" onClick={login1}>Client Login</Button>
-                                <Link to="/register"><Button className="register-button">Register</Button></Link>
+                                <Link to="/register"><Button className="register-button" >Register</Button></Link>
                                 <FormGroup check>
                                     <Label check>
                                         <Input type="checkbox" />{' '}Remember Me
