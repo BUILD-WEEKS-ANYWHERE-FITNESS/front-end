@@ -21,7 +21,7 @@ function App() {
   // const [session] = useState(data);
 	const [session, setSession] = useState([data]);
 
-	function addClass (item) {
+	function addClass (item)  {
 		setSession([...session, item])
 	};
 
