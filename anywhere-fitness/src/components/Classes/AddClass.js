@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Col, Container, Card, CardBody, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { axiosWithAuth } from '../../utils/axiosWithAuth'; 
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { ClassContext } from '../context/classContext';
 import axios from 'axios'
 
@@ -9,9 +9,9 @@ const AddClass = (props) => {
     const [newClass, setNewClass] = useState({})
     const [ myClass, setMyClass ] = useState({
         name: "",
-        type: "",
         duration: "",
-        intensity: "" 
+        type: "",
+        intensity: ""
     })
 
     const { session, addClass }  = useContext(ClassContext);
@@ -45,7 +45,7 @@ const AddClass = (props) => {
     //     .post('https://fitnessanywhere.herokuapp.com/api/classes', newClass)
     //     .then(res => {
     //         console.log(res)
-    //     })   
+    //     })
     // }
 
     return (
@@ -85,9 +85,9 @@ const AddClass = (props) => {
                                 <Label for="duration" sm={2}>Duration</Label>
                                 <Input style={{width:"80.75%", marginLeft:"18%"}} sm={10}  type="select" name="duration" id="duration" label="duration" value={props.duration} onChange={handleChanges} >
                                   <option value=""> Select duration </option>
-                                  <option value="30-mins">30 mins</option>
-                                  <option value="45-mins">45 mins</option>
-                                  <option value="60-mins">60 mins</option>
+                                  <option value="30 mins">30 mins</option>
+                                  <option value="45 mins">45 mins</option>
+                                  <option value="60 mins">60 mins</option>
                                 </Input>
 
                             </FormGroup>
