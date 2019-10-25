@@ -16,45 +16,48 @@ const Classes = (props) => {
     //})
     //Fake data for now since endpoints are not functioning currently.
 
-    const [classList, setClassList] = useState([])
-    
-    const [search, setSearch] = useState({
-    searchTerm: " ",
-    duration: "",
-    type: "",
-    intensity: "",
-    })
-    const [classes,setClasses] = useState([])
-    
-      const [searchResults, setSearchResults] = useState([]);
-
-      useEffect(() => {
-          const resultSearch = classes.filter(classObj =>
-                             classObj.name.toLowerCase().includes(search.searchTerm.toLowerCase())
-                                        );
-         const resultDuration = resultSearch.filter(classObj =>
-                                              classObj.duration.includes(search.duration)
-                                              )
-
-         const resultType = resultDuration.filter(classObj =>
-                                                 classObj.type.toLowerCase().includes(search.type.toLowerCase())
-                                                 )
-         const resultIntensity = resultType.filter(classObj =>
-                                                 classObj.intensity.toLowerCase().includes(search.intensity.toLowerCase())
-                                                 )
-         setClassList(resultIntensity);
-      },[search])
-
+    const [classList, setClassList] = useState(data);
+    console.log(data);
   useEffect(() =>{
     setClassList(data);
   }, [])
-  console.log(classList)
 
-      //Controlled Inputs
-      //
-      const changeHandler = (e) => {
-          setSearch({...search, [e.target.name]: e.target.value})
-      }
+
+    const [searchResults, setSearchResults] = useState([]);
+
+    const [search, setSearch] = useState({
+    searchTerm: "",
+    duration: "",
+    type: "",
+    intensity: "",
+    });
+    //Controlled Inputs
+    //
+    const changeHandler = (e) => {
+        setSearch({...search, [e.target.name]: e.target.value})
+    }
+
+
+
+      useEffect(() => {
+        setClassList(data);
+         const resultSearch = classList.filter(classObj =>
+                             classObj.name.toLowerCase().includes(search.searchTerm.toLowerCase())
+                                        );
+        console.log(resultSearch);
+         const resultDuration = resultSearch.filter(classObj =>
+                                              classObj.duration.includes(search.duration)
+                                              );
+
+         const resultType = resultDuration.filter(classObj =>
+                                                 classObj.type.toLowerCase().includes(search.type.toLowerCase())
+                                                 );
+         const resultIntensity = resultType.filter(classObj =>
+                                                 classObj.intensity.toLowerCase().includes(search.intensity.toLowerCase())
+                                                 );
+         setSearchResults(resultIntensity);
+      },[search])
+
   return (
     <div className="card-container">
         <Card className="classes">

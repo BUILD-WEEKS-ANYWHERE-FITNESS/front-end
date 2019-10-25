@@ -2,17 +2,17 @@
 export let data =
 [{
     name:'Hot Yoga',
-    duration:'30-mins',
+    duration:'30 mins',
     type:'Yoga',
     intensity: 'Intermediate'
 },{
     name:'Functional Fitness',
-    duration:'60-mins',
-    type:'Functional Training',
+    duration:'60 mins',
+    type:'Pilates',
     intensity:'Advanced'
 },{
     name:'Conditioning',
-    duration:'45-mins',
+    duration:'45 mins',
     type:'Cardio',
-    intensity:'Easy'
+    intensity:'Beginner'
 }]
